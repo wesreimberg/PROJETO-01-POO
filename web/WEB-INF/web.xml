@@ -4,9 +4,17 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>br.com.fatecpg.HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Integrantes</servlet-name>
+        <servlet-class>br.com.fatecpg.Integrantes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Integrantes</servlet-name>
+        <url-pattern>/integrantes.html</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
