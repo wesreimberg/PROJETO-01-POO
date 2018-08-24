@@ -7,6 +7,7 @@ package br.com.fatecpg;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -78,7 +79,7 @@ public class JurosCompostosServlet extends HttpServlet {
             
             out.println("<hr/>");
             
-            out.println("<form action='juros-composto.html'>");
+            out.println("<form action='juros-compostos.html'>");
                  out.println("<h1 style= color:#fff;font-family:Arial> Juros Composto </h1>");
             
                  out.println("<label style= color:#fff;font-family:Arial>Capital</label>");
