@@ -37,8 +37,28 @@ public class JurosCompostosServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+
+            out.println("<title>Calcular Juros Compostos</title>");
+
             out.println("</head>");
-            out.println("<body>");         
+            out.println("<body>");
+
+            out.println("<h1>Juros Compostos</h1>");
+            out.println("<form action='juros-simples.html'>");
+
+            out.println("<label>Valor</label>");
+            out.println("<input type='text' name='valor'>");
+
+            out.println("<label>Taxa</label>");
+            out.println("<input type='text' name='taxa'>");
+
+            out.println("<label>Período</label>");
+            out.println("<input type='text' name='tempo'>");
+
+            out.println("<button>Enviar</button>");
+
+            out.println("</form>");
+
             out.println("</body>");
             out.println("</html>");
         }
