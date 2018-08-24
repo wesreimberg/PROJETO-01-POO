@@ -63,6 +63,8 @@ public class JurosCompostosServlet extends HttpServlet {
 "    left: 50%;\n" +
 "    transform: translateY(-50%) translateX(-50%);\n" +
 "  }");
+            out.println(".table{background-color: white;border-collapse: collapse;border: 1px solid #ccc;}");
+            out.println(".table th, .table td {padding: 0.5em;border: 1px solid #ccc;}");
             
             
             
@@ -114,7 +116,7 @@ public class JurosCompostosServlet extends HttpServlet {
             DecimalFormat formatacao = new DecimalFormat("###,##0.00");
             for (int i = 0; i <= tempo; i++) {
                 if (i == 0) {
-                    out.println("<table>");
+                    out.println("<table class='table'>");
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th>Mês</th>");
