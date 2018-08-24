@@ -41,31 +41,37 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("a:link, a:active, a:visited{");
             out.println("color: Black;");
             out.println("text-decoration: none;}");
+            out.println("body{");                
+            out.println("background-image: url(bg.jpg);");
+            out.println("background-attachment:fixed;");
+            out.println("background-size: cover;");
+            out.println("background-repeat:no-repeat;");
+            out.println("}");
             out.println("</Style>");
             out.println("<title>Calcular Juros Simples</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<form action='juros-simples.html'>");
-            out.println("<h1> Juros Simples </h1>");
+            out.println("<h1 style= color:#fff;font-family:Arial> Juros Simples </h1>");
             
-            out.println("<label>Capital</label>");
+            out.println("<label style= color:#fff;font-family:Arial>Capital</label>");
             out.println("<br>");            
             out.println("<input type='text' name='capital'/>");
             out.println("<br>");
             
-            out.println("<label>Taxa</label>");
+            out.println("<label style= color:#fff;font-family:Arial>Taxa</label>");
             out.println("<br>");            
             out.println("<input type='text' name='taxa'/>");
             out.println("<br>");
             
-            out.println("<label>Tempo(meses)</label>");
+            out.println("<label style= color:#fff;font-family:Arial>Tempo(meses)</label>");
             out.println("<br>");            
             out.println("<input type='text' name='tempo'/>");            
             out.println("<br>");
             out.println("<br>");
             
             out.println("<input type='submit' name='Calcular'/>");            
-            out.println("<button><a href='index.html'>Cancelar</a></button>");
+            out.println("<a href='index.html'><img src=\"btn_volta.png\"/></a>");
             out.println("<br>");
             out.println("<br>");
             
