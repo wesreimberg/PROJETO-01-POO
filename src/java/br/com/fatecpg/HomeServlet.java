@@ -46,11 +46,19 @@ public class HomeServlet extends HttpServlet {
             out.println("<title>Servlet HomeServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-	out.println ("<h1 style= color:#fff;font-family:Arial>INTEGRANTES</h1>");
-	out.println ("<p style= color:#fff;font-family:Arial;font-size:26px>Nome1<br>Nome2<br>Nome3<br>Nome4<br>Nome5<br>");
+          out.println("<h1 style= color:#fff;font-family:Arial>GROUP ONE</h1>");  
+	out.println("<p  style= color:#fff;font-family:Arial;font-size:26p;x>Projeto realizado para"); 
+         out.println("a disciplina de Programação 	");   
+	out.println("orientada a Objeto. <br> Ministrada pelo professor ");
+	
+       out.println("Ricardo Pupo Larguesa.Fatec Praia Grande."); 
+        
+                
 	out.println ("<h2 style= color:#fff;font-family:Arial>PROGRAMAÇÃO ORIENTADA A OBJETO</h2>");
 	out.println("<a href='index.html'><img src=\"btn_volta.png\"/></a>");
-
+        
+        out.println("<a href='juros-simples.html'><img src=\"btn_juros.png\"/></a>");
+	out.println("<a href='juros-compostos.html'><img src=\"btn_juroc.png\"/></a>");
             out.println("</body>");
             out.println("</html>");
         }
