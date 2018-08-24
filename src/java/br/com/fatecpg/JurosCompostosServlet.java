@@ -76,7 +76,6 @@ public class JurosCompostosServlet extends HttpServlet {
             
             out.println("<hr/>");
             
-            out.println("<form>");
             out.println("<form action='juros-composto.html'>");
                  out.println("<h1 style= color:#fff;font-family:Arial> Juros Composto </h1>");
             
@@ -97,21 +96,65 @@ public class JurosCompostosServlet extends HttpServlet {
                 
             
                 out.println("<input type='submit' name='Calcular'/>");
-            out.println("</form>");
              out.println("</form>");
             out.println("</div>");
         
             
-            Float valorCapital = Float.parseFloat(request.getParameter("capital"));
-            Double valorTaxa = Double.parseDouble(request.getParameter("taxa"));
-            int valorTempo = Integer.parseInt(request.getParameter("tempo"));
-            
-            Float montante = valorCapital * (1 + (float)(valorTaxa / 100)* valorTempo);
-            Float juros = valorCapital *(float) (valorTaxa / 100)* valorTempo;
-            
-            out.println("<hr/>");
-            out.println("<h1 style= color:#fff;font-family:Arial>O valor do  Juros  é: R$"+ juros + " </h1>");
-             out.println("<h1 style= color:#fff;font-family:Arial>A soma do Montante é: R$"+ montante + " </h1>");
+            // Pegando parâmetros
+            Float capital = Float.parseFloat(request.getParameter("capital"));
+            Double taxa = Double.parseDouble(request.getParameter("taxa"));
+            int tempo = Integer.parseInt(request.getParameter("tempo"));
+
+            // Declarando variáveis
+            double montante, jurosAcumulado, juros, valor, elevado, aux;
+            taxa = taxa / 100;
+            aux = 0;
+
+            // Formatando valor
+            DecimalFormat formatacao = new DecimalFormat("###,##0.00");
+            for (int i = 0; i <= tempo; i++) {
+                if (i == 0) {
+                    out.println("<table>");
+                    out.println("<thead>");
+                    out.println("<tr>");
+                    out.println("<th>Mês</th>");
+                    out.println("<th>Juros do mês</th>");
+                    out.println("<th>Juros acumulado</th>");
+                    out.println("<th>Montante acumulado</th>");
+                    out.println("</tr>");
+                    out.println("</thead>");
+                    out.println("<tbody>");
+                    out.println("<tr>");
+                    out.println("<th>0</th>");
+                    out.println("<th>-</th>");
+                    out.println("<th>-</th>");
+                    out.println("<th>" + formatacao.format(capital) + "</th>");
+                    out.println("</tr>");
+                } else {
+                    valor = 1 + taxa;
+                    elevado = Math.pow(valor, i);
+                    jurosAcumulado = capital * (elevado - 1);
+                    montante = capital * elevado;
+                    if (i == 1) {
+                        juros = jurosAcumulado;
+                        aux = jurosAcumulado;
+                    } else {
+                        juros = jurosAcumulado - aux;
+                        aux = jurosAcumulado;
+                    }
+                    out.println("<tr>");
+                    out.println("<th>" + i + "</th>");
+                    out.println("<th>" + formatacao.format(juros) + "</th>");
+                    out.println("<th>" + formatacao.format(jurosAcumulado) + "</th>");
+                    out.println("<th>" + formatacao.format(montante) + "</th>");
+                    out.println("</tr>");
+
+                    if (i == tempo) {
+                        out.println("</tbody>");
+                        out.println("</table>");
+                    }
+                }
+            }
              
             
             out.println("</body>");
