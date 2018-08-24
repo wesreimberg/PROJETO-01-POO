@@ -34,31 +34,86 @@ public class JurosCompostosServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
+              out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-
-            out.println("<title>Calcular Juros Compostos</title>");
-
+            out.println("<Style>");
+            out.println("a:link, a:active, a:visited{");
+            out.println("color: Black;");
+            out.println("text-decoration: none;}");
+            out.println("body{");                
+            out.println("background-image: url(bg.jpg);");
+            out.println("background-attachment:fixed;");
+            out.println("background-size: cover;");
+            out.println("background-repeat:no-repeat;");
+            out.println("}");
+           
+            out.println("  body.center-form {\n" +
+"    min-height: 50vh;\n" +
+"  }\n" +
+"\n" +
+"  div.center-form {\n" +
+"    position: relative;\n" +
+"    min-height: 50vh;\n" +
+"  }\n" +
+"\n" +
+"  div.center-form > form {\n" +
+"    position: absolute;\n" +
+"    top: 50%;\n" +
+"    left: 50%;\n" +
+"    transform: translateY(-50%) translateX(-50%);\n" +
+"  }");
+            
+            
+            
+            out.println("</Style>");
+            out.println("<title>Calcular Juros Composto</title>");            
             out.println("</head>");
-            out.println("<body>");
-
-            out.println("<h1>Juros Compostos</h1>");
-            out.println("<form action='juros-simples.html'>");
-
-            out.println("<label>Valor</label>");
-            out.println("<input type='text' name='valor'>");
-
-            out.println("<label>Taxa</label>");
-            out.println("<input type='text' name='taxa'>");
-
-            out.println("<label>Período</label>");
-            out.println("<input type='text' name='tempo'>");
-
-            out.println("<button>Enviar</button>");
-
+            out.println("<body class=\"center-form\">\n" +
+                "<div class=\"center-form\">");
+             out.println("<a href='home.html'><img src=\"btn_volta.png\"/></a>");
+             out.println("<a href='juros-simples.html'><img src=\"btn_juros.png\"/></a>");
+            
+            out.println("<hr/>");
+            
+            out.println("<form>");
+            out.println("<form action='juros-composto.html'>");
+                 out.println("<h1 style= color:#fff;font-family:Arial> Juros Composto </h1>");
+            
+                 out.println("<label style= color:#fff;font-family:Arial>Capital</label>");
+                 out.println("<br>");            
+                 out.println("<input type='text' name='capital'/>");
+                 out.println("<br>");
+            
+                 out.println("<label style= color:#fff;font-family:Arial>Taxa (%)</label>");
+                 out.println("<br>");            
+                 out.println("<input type='text' name='taxa'/>");
+                 out.println("<br>");
+            
+                out.println("<label style= color:#fff;font-family:Arial>Tempo (meses)</label>");
+                out.println("<br>");            
+                out.println("<input type='text' name='tempo'/>");            
+                out.println("<br>");
+                
+            
+                out.println("<input type='submit' name='Calcular'/>");
             out.println("</form>");
-
+             out.println("</form>");
+            out.println("</div>");
+        
+            
+            Float valorCapital = Float.parseFloat(request.getParameter("capital"));
+            Double valorTaxa = Double.parseDouble(request.getParameter("taxa"));
+            int valorTempo = Integer.parseInt(request.getParameter("tempo"));
+            
+            Float montante = valorCapital * (1 + (float)(valorTaxa / 100)* valorTempo);
+            Float juros = valorCapital *(float) (valorTaxa / 100)* valorTempo;
+            
+            out.println("<hr/>");
+            out.println("<h1 style= color:#fff;font-family:Arial>O valor do  Juros  é: R$"+ juros + " </h1>");
+             out.println("<h1 style= color:#fff;font-family:Arial>A soma do Montante é: R$"+ montante + " </h1>");
+             
+            
             out.println("</body>");
             out.println("</html>");
         }
