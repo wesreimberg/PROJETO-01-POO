@@ -43,22 +43,21 @@ public class HomeServlet extends HttpServlet {
 		out.println("background-repeat:no-repeat;");
 		out.println("}");
 	    out.println("</style>");
-            out.println("<title>Servlet HomeServlet</title>");            
+            out.println("<title>Home - Integrantes</title>");            
             out.println("</head>");
-            out.println("<body>");
-          out.println("<h1 style= color:#fff;font-family:Arial>GROUP ONE</h1>");  
-	out.println("<p  style= color:#fff;font-family:Arial;font-size:26p;x>Projeto realizado para"); 
-         out.println("a disciplina de Programação 	");   
-	out.println("orientada a Objeto. <br> Ministrada pelo professor ");
-	
-       out.println("Ricardo Pupo Larguesa.Fatec Praia Grande."); 
-        
-                
-	out.println ("<h2 style= color:#fff;font-family:Arial>PROGRAMAÇÃO ORIENTADA A OBJETO</h2>");
-	out.println("<a href='index.html'><img src=\"btn_volta.png\"/></a>");
-        
-        out.println("<a href='juros-simples.html'><img src=\"btn_juros.png\"/></a>");
-	out.println("<a href='juros-compostos.html'><img src=\"btn_juroc.png\"/></a>");
+            out.println("<body>");        
+                out.println("<h1 style= color:#fff;font-family:Arial>INTEGRANTES</h1>");
+                out.println("<p  style= color:#fff;font-family:Arial;font-size:26px>Diogo Lopes<br>");
+                out.println("Eduardo Simão<br>");
+                out.println("Gustavo Cavalcanti<br>");
+                out.println("Mateus Marinho<br>");
+                out.println("Weslley Reimberg<br>");
+                out.println("<br>");
+                out.println("</p>");
+                out.println("<hr/>");
+                out.println("<a href='index.html'><img src=\"btn_volta.png\"/></a>");        
+                out.println("<a href='juros-simples.html'><img src=\"btn_juros.png\"/></a>");
+                out.println("<a href='juros-compostos.html'><img src=\"btn_juroc.png\"/></a>");
             out.println("</body>");
             out.println("</html>");
         }
