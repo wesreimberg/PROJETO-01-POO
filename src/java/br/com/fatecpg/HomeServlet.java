@@ -38,7 +38,7 @@ public class HomeServlet extends HttpServlet {
             out.println("<style>");
 	    out.println("body{");                
 		out.println("background-image: url(bg.jpg);");
-		out.println("background-attachment:fixed;}");
+		out.println("background-attachment:fixed;");
 		out.println("background-size: cover;");
 		out.println("background-repeat:no-repeat;");
 		out.println("}");
