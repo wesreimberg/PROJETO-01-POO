@@ -70,7 +70,7 @@ public class JurosCompostosServlet extends HttpServlet {
             
             
             out.println("</Style>");
-            out.println("<title>Calcular Juros Composto</title>");            
+            out.println("<title>Calcular - Juros Compostos</title>");            
             out.println("</head>");
             out.println("<body class=\"center-form\">\n" +
                 "<div class=\"center-form\">");
@@ -80,9 +80,9 @@ public class JurosCompostosServlet extends HttpServlet {
             out.println("<hr/>");
             
             out.println("<form action='juros-compostos.html'>");
-                 out.println("<h1 style= color:#fff;font-family:Arial> Juros Composto </h1>");
+                 out.println("<h1 style= color:#fff;font-family:Arial> Juros Compostos </h1>");
             
-                 out.println("<label style= color:#fff;font-family:Arial>Capital</label>");
+                 out.println("<label style= color:#fff;font-family:Arial>Capital (R$)</label>");
                  out.println("<br>");            
                  out.println("<input type='text' name='capital'/>");
                  out.println("<br>");
@@ -97,8 +97,8 @@ public class JurosCompostosServlet extends HttpServlet {
                 out.println("<input type='text' name='tempo'/>");            
                 out.println("<br>");
                 
-            
-                out.println("<input type='submit' name='Calcular'/>");
+                out.println("<br>");
+                out.println("<input type='submit' value='Calcular'/>");
              out.println("</form>");
             out.println("</div>");
         
@@ -117,7 +117,7 @@ public class JurosCompostosServlet extends HttpServlet {
             DecimalFormat formatacao = new DecimalFormat("###,##0.00");
             for (int i = 0; i <= tempo; i++) {
                 if (i == 0) {
-                    out.println("<table class='table'>");
+                    out.println("<table class='table' align='center'>");
                     out.println("<thead>");
                     out.println("<tr>");
                     out.println("<th>Mês</th>");

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Positivo
+ * @author EduardoSimão
  */
 @WebServlet(name = "JurosSimplesServlet", urlPatterns = {"/juros-simples.html"})
 public class JurosSimplesServlet extends HttpServlet {
@@ -67,7 +67,7 @@ public class JurosSimplesServlet extends HttpServlet {
             
             
             out.println("</Style>");
-            out.println("<title>Calcular Juros Simples</title>");            
+            out.println("<title>Calcular - Juros Simples</title>");            
             out.println("</head>");
             out.println("<body class=\"center-form\">\n" +
                 "<div class=\"center-form\">");
@@ -80,7 +80,7 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("<form action='juros-simples.html'>");
                  out.println("<h1 style= color:#fff;font-family:Arial> Juros Simples </h1>");
             
-                 out.println("<label style= color:#fff;font-family:Arial>Capital</label>");
+                 out.println("<label style= color:#fff;font-family:Arial>Capital (R$)</label>");
                  out.println("<br>");            
                  out.println("<input type='text' name='capital'/>");
                  out.println("<br>");
@@ -95,8 +95,8 @@ public class JurosSimplesServlet extends HttpServlet {
                 out.println("<input type='text' name='tempo'/>");            
                 out.println("<br>");
                 
-            
-                out.println("<input type='submit' name='Calcular'/>");
+                out.println("<br>");
+                out.println("<input type='submit' value='Calcular'/>");
             out.println("</form>");
              out.println("</form>");
             out.println("</div>");
